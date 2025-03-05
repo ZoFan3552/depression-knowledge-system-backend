@@ -65,6 +65,7 @@ public class UserController {
 
         int count = userService.insertUser(user);
         if (count > 0) {
+            log.info("注册成功，新用户为：{}", user.getUsername());
             return ApiResponse.success(
                     ResponseCode.REGISTER_SUCCEED.getValue(),
                     "注册成功",
@@ -75,6 +76,19 @@ public class UserController {
                 ResponseCode.UNKNOWN_ERROR.getValue(),
                 "注册失败,未知错误,请联系管理员"
         );
+    }
+
+    @PostMapping("/check-login")
+    public ApiResponse<Boolean> checkHasLogin(){
+        if (StpUtil.isLogin()) {
+            return ApiResponse.success(
+                    ResponseCode.LOGIN_ALREADY_DONE.getValue(),
+                    "用户" + StpUtil.getLoginId() + "已登录",
+                    true);
+        }
+        return ApiResponse.error(
+                ResponseCode.LOGIN_UNDONE.getValue(),
+                "用户" + StpUtil.getLoginId() + "未登录");
     }
 
     @PostMapping("/login")
@@ -107,6 +121,7 @@ public class UserController {
                     tokenDTO
             );
         }
+        log.info("登陆失败,请检查用户名和密码");
         return ApiResponse.error(
                 ResponseCode.LOGIN_FAILED.getValue(),
                 "登陆失败,请检查用户名和密码"
@@ -116,13 +131,16 @@ public class UserController {
     @PostMapping("/logout")
     public ApiResponse<String> logout() {
         if (StpUtil.isLogin()) {
+            String username = (String) StpUtil.getLoginId();
             StpUtil.logout();
+            log.info("用户 {} 注销成功", username);
             return ApiResponse.success(
                     ResponseCode.LOGOUT_SUCCEED.getValue(),
                     "注销成功",
                     null
             );
         }
+        log.info("注销失败");
         return ApiResponse.error(
                 ResponseCode.LOGOUT_FAILED.getValue(),
                 "注销失败,当前没有账户登录"
