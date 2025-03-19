@@ -1,18 +1,13 @@
 package com.zeddic.common.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * @author: zeddic
  * @description:
  * @date: 2025/1/25 下午7:54
  */
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
 public class TokenDTO {
     private String tokenName;

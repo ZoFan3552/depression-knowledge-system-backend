@@ -2,20 +2,14 @@ package com.zeddic.common.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * @author: zeddic
  * @description:
  * @date: 2025/1/24 下午5:05
  */
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class UserLoginDTO {
     @NotNull(message = "用户名不能为空")
     private String username;

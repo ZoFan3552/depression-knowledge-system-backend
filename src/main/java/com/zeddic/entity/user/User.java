@@ -16,9 +16,9 @@ import java.time.LocalDateTime;
  * @date: 2025/1/23 下午9:04
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     /**
      * 用户ID

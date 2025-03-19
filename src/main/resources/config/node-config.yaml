@@ -1,0 +1,11 @@
+typeColorMap:
+  Disease: "#FF5733"         # 红色
+  Symptom: "#33FF57"         # 绿色
+  Risk: "#5733FF"            # 蓝色
+  Therapy: "#FFBD33"         # 橙色
+  Medication: "#33FFBD"      # 青色
+  Expert: "#BD33FF"          # 紫色
+  Research: "#FF3380"        # 粉色
+  Patient: "#3380FF"         # 蓝色
+  SocialSupport: "#80FF33"   # 黄绿色
+  Knowledge: "#B5B5B5"       # 灰色
