@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 /**
- * @author: zeddic
+ * @author Zeddic
  * @description:
  * @date: 2025/1/23 下午9:04
  */

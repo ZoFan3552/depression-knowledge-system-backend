@@ -6,7 +6,7 @@ import com.zeddic.service.user.UserService;
 import org.springframework.stereotype.Service;
 
 /**
- * @author: zeddic
+ * @author Zeddic
  * @description:
  * @date: 2025/1/23 下午9:24
  */

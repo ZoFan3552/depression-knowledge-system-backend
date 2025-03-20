@@ -3,7 +3,7 @@ package com.zeddic.common.dto;
 import lombok.*;
 
 /**
- * @author: zeddic
+ * @author Zeddic
  * @description:
  * @date: 2025/1/25 下午7:54
  */

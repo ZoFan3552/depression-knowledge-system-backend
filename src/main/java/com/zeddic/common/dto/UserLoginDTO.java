@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 /**
- * @author: zeddic
+ * @author Zeddic
  * @description:
  * @date: 2025/1/24 下午5:05
  */

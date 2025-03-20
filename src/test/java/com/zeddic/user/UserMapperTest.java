@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author: zeddic
+ * @author Zeddic
  * @description:
  * @date: 2025/1/23 下午9:13
  */

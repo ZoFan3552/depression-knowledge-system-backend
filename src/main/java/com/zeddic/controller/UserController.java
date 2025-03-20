@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 
 /**
- * @author: zeddic
+ * @author Zeddic
  * @description:
  * @date: 2025/1/24 下午1:21
  */
@@ -30,7 +30,9 @@ public class UserController {
 
     private final UserService userService;
 
-    // 静态常量：SHA-256 加密工具，避免每次请求都创建实例
+    /**
+     * 静态常量：SHA-256 加密工具，避免每次请求都创建实例
+     */
     private static final Digester SHA256_DIGESTER = new Digester(DigestAlgorithm.SHA256);
 
     public UserController(UserService userService) {

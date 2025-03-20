@@ -18,7 +18,7 @@ import java.util.Optional;
 
 
 @SpringBootTest
-@Transactional
+@Transactional(rollbackFor = RuntimeException.class)
 @Slf4j
 public class GraphRepositoryTest {
 

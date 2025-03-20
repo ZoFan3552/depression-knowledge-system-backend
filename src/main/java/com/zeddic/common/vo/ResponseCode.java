@@ -3,7 +3,7 @@ package com.zeddic.common.vo;
 import lombok.Getter;
 
 /**
- * @author: zeddic
+ * @author Zeddic
  * @description:
  * @date: 2025/1/24 下午8:30
  */
