@@ -1,5 +1,6 @@
 package com.zeddic.entity.graph.depression;
 
+import com.alibaba.fastjson2.JSONObject;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,11 +12,11 @@ import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Property;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Set;
+import java.util.UUID;
 
 /**
  * 药物实体类，描述用于治疗抑郁症的药物
+ *
  * @author Zeddic
  */
 @Node
@@ -27,21 +28,12 @@ public class Medication {
     @Id
     @GeneratedValue
     private Long id;
-
     /**
-     * 实体名称
+     * 业务标识
      */
-    
-    @Property(name = "name")
     @NotNull
-    private String name;
-
-
-    /**
-     * 实体描述
-     */
-    @Property(name = "description")
-    private String description;
+    @Property(name = "entityId")
+    private String entityId;
 
     /**
      * 创建时间
@@ -65,7 +57,7 @@ public class Medication {
      * 品牌名列表
      */
     @Property(name = "brandNames")
-    private List<String> brandNames;
+    private String brandNames;
 
     /**
      * 药物分类（如SSRI、SNRI等）
@@ -95,17 +87,17 @@ public class Medication {
      * 副作用列表
      */
     @Property(name = "sideEffects")
-    private Set<String> sideEffects;
+    private String sideEffects;
 
     /**
      * 禁忌症
      */
     @Property(name = "contraindications")
-    private Set<String> contraindications;
+    private String contraindications;
 
     /**
      * 药物相互作用
      */
     @Property(name = "interactions")
-    private Set<String> interactions;
+    private String interactions;
 }

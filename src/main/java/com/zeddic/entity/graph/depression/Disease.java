@@ -15,7 +15,7 @@ import java.util.Set;
  *
  * @author Zeddic
  */
-@Node
+@Node("Disease")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,17 +26,17 @@ public class Disease {
     private Long id;
 
     /**
-     * 实体名称
+     * 业务标识
      */
-    @Property(name = "name")
     @NotNull
-    private String name;
+    @Property(name = "entityId")
+    private String entityId;
 
     /**
-     * 实体描述
+     * 实体定义
      */
-    @Property(name = "description")
-    private String description;
+    @Property(name = "definition")
+    private String definition;
 
     /**
      * 创建时间
@@ -51,10 +51,10 @@ public class Disease {
     private LocalDateTime updateTime;
 
     /**
-     * 医学编码（如ICD-10）
+     * 医学编码 ICD-11
      */
-    @Property(name = "medicalCode")
-    private String medicalCode;
+    @Property(name = "icd11Code")
+    private String icd11Code;
 
     /**
      * 疾病分类（如轻度、中度、重度抑郁症）
@@ -67,12 +67,6 @@ public class Disease {
      */
     @Property(name = "synonyms")
     private Set<String> synonyms;
-
-    /**
-     * 患病率
-     */
-    @Property(name = "prevalenceRate")
-    private Double prevalenceRate;
 
     /**
      * 诊断标准

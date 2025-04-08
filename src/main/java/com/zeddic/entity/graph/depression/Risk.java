@@ -12,7 +12,6 @@ import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Property;
 
 import java.time.LocalDateTime;
-import java.util.Set;
 
 /**
  * 风险因素实体类，描述可能导致抑郁症的风险因素
@@ -29,19 +28,11 @@ public class Risk {
     private Long id;
 
     /**
-     * 实体名称
+     * 业务标识
      */
-    
-    @Property(name = "name")
     @NotNull
-    private String name;
-
-
-    /**
-     * 实体描述
-     */
-    @Property(name = "description")
-    private String description;
+    @Property(name = "entityId")
+    private String entityId;
 
     /**
      * 创建时间
@@ -78,5 +69,5 @@ public class Risk {
      * 预防措施
      */
     @Property(name = "preventiveMeasures")
-    private Set<String> preventiveMeasures;
+    private String preventiveMeasures;
 }

@@ -29,17 +29,11 @@ public class Symptom {
     private Long id;
 
     /**
-     * 实体名称
+     * 业务标识
      */
-    @Property(name = "name")
     @NotNull
-    private String name;
-
-    /**
-     * 实体描述
-     */
-    @Property(name = "description")
-    private String description;
+    @Property(name = "entityId")
+    private String entityId;
 
     /**
      * 创建时间
@@ -60,11 +54,10 @@ public class Symptom {
     private String category;
 
     /**
-     * 严重程度（1-10）
+     * 严重程度
      */
     @Property(name = "severity")
-    @Size(min =  1, max = 10 ,message = "严重程度范围为 1 - 10")
-    private Integer severity;
+    private String  severity;
 
     /**
      * 持续时间描述
@@ -73,14 +66,8 @@ public class Symptom {
     private String duration;
 
     /**
-     * 是否为常见症状
-     */
-    @Property(name = "isCommon")
-    private Boolean isCommon;
-
-    /**
      * 具体表现形式
      */
     @Property(name = "manifestations")
-    private Set<String> manifestations;
+    private String manifestations;
 }

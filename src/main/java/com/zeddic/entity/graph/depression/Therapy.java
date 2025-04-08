@@ -27,18 +27,11 @@ public class Therapy {
     private Long id;
 
     /**
-     * 实体名称
+     * 业务标识
      */
-    @Property(name = "name")
     @NotNull
-    private String name;
-
-
-    /**
-     * 实体描述
-     */
-    @Property(name = "description")
-    private String description;
+    @Property(name = "entityId")
+    private String entityId;
 
     /**
      * 创建时间
